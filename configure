@@ -196,7 +196,7 @@ show $cc -c $test.c
 if test "$gcc" -eq 1 && ($cc -c $test.c) >> configure.log 2>&1; then
   echo ... using gcc >> configure.log
   CC="$cc"
-  CFLAGS="${CFLAGS--O3} -fPIC -fPIE"
+  CFLAGS="${CFLAGS--O3} -fPIC"
   SFLAGS="${CFLAGS--O3}"
   if test "$ARCHS"; then
     CFLAGS="${CFLAGS} ${ARCHS}"
@@ -834,6 +834,8 @@ EOF
     echo "Checking for attribute(visibility) support... No." | tee -a configure.log
   fi
 fi
+
+LDFLAGS="-L/opt/dev/glibc/lib $LDFLAGS"
 
 # show the results in the log
 echo >> configure.log
