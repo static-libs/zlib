@@ -4,10 +4,15 @@ out/
 .idea/
 build-*/
 cmake-*/
+Makefile
+zconf.h
 
 *.a
+*.pc
 *.so
+*.log
 *.run
+ztest*
 
 # Prerequisites
 *.d
